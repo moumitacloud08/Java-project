@@ -1,4 +1,4 @@
-package com.dspattern.builder.example1;
+package com.dspattern.creational.builder.example1;
 
 import java.time.LocalDate;
 import java.time.Period;

@@ -1,9 +1,9 @@
-package com.dspattern.builder.example2;
+package com.dspattern.creational.builder.example2;
 
 import java.time.LocalDate;
 import java.time.Period;
 
-import com.dspattern.builder.example1.Address;
+import com.dspattern.creational.builder.example1.Address;
 
 //Product class
 public class UserDTO {

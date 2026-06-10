@@ -1,4 +1,4 @@
-package com.dspattern.factorymethod.message;
+package com.dspattern.creational.factorymethod.message;
 
 public class TextMessage extends Message {
 	

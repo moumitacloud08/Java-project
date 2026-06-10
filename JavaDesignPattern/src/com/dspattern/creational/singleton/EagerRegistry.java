@@ -1,4 +1,4 @@
-package com.dspattern.singleton;
+package com.dspattern.creational.singleton;
 
 /**
  * This class uses eager initialization of singleton instance.

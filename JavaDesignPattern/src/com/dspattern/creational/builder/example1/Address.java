@@ -1,4 +1,4 @@
-package com.dspattern.builder.example1;
+package com.dspattern.creational.builder.example1;
 
 public class Address {
 

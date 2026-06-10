@@ -1,4 +1,4 @@
-package com.dspattern.singleton;
+package com.dspattern.creational.singleton;
 
 /**
  * Singleton pattern using lazy initialization holder class. This ensures that, we have a lazy initialization

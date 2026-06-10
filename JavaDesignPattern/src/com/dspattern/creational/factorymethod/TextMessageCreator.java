@@ -1,7 +1,7 @@
-package com.dspattern.factorymethod;
+package com.dspattern.creational.factorymethod;
 
-import com.dspattern.factorymethod.message.Message;
-import com.dspattern.factorymethod.message.TextMessage;
+import com.dspattern.creational.factorymethod.message.Message;
+import com.dspattern.creational.factorymethod.message.TextMessage;
 
 /**
  * Provides implementation for creating Text messages

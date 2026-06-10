@@ -1,4 +1,4 @@
-package com.dspattern.singleton;
+package com.dspattern.creational.singleton;
 
 /**
  * (Ref. Google I/O 2k8 Joshua Bloch)

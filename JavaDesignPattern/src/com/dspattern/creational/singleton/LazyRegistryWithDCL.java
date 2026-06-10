@@ -1,4 +1,4 @@
-package com.dspattern.singleton;
+package com.dspattern.creational.singleton;
 
 /**
  * This class demonstrates singleton pattern using Double Checked Locking or "classic" singleton.

@@ -1,29 +1,30 @@
-package com.dspattern.builder.example1;
+package com.dspattern.creational.builder.example2;
 
 import java.time.LocalDate;
 
-//This is our client which also works as "director"
+import com.dspattern.creational.builder.example1.Address;
+import com.dspattern.creational.builder.example1.User;
+import com.dspattern.creational.builder.example2.UserDTO.UserDTOBuilder;
+
 public class Client {
 
 	public static void main(String[] args) {
 		User user = createUser();
-		UserDTOBuilder builder = new UserWebDTOBuilder();
-		
-		UserDTO dto = directBuild(builder, user);
+		// Client has to provide director with concrete builder
+		UserDTO dto = directBuild(UserDTO.getBuilder(), user);
 		System.out.println(dto);
 	}
-	
-	// Director
-	private static UserDTO directBuild(UserDTOBuilder builder, User user) {
-		return builder.withFirstName(user.getFirstName()).withLastName(user.getLastName()).
-		withAddress(user.getAddress())
-		.withBirthday(user.getBirthday())
-		.build();
-		
-	}
-	
+
 	/**
-	 * Returns a sample user. 
+	 * This method serves the role of director in builder pattern.
+	 */
+	private static UserDTO directBuild(UserDTOBuilder builder, User user) {
+		return builder.withFirstName(user.getFirstName()).withLastName(user.getLastName())
+				.withBirthday(user.getBirthday()).withAddress(user.getAddress()).build();
+	}
+
+	/**
+	 * Returns a sample user.
 	 */
 	public static User createUser() {
 		User user = new User();
@@ -39,4 +40,5 @@ public class Client {
 		user.setAddress(address);
 		return user;
 	}
+
 }
