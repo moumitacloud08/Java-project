@@ -19,35 +19,30 @@ public class Meal {
 
     //static inner Builder for constructing meal objects
     public static class Builder {
+        //Required
         private final Burger burger;
 
+        //Optional
         private Drink drink;
         private Fries fries;
 
+        //Builder constructor for required field
         public Builder(Burger burger) {
             this.burger = Objects.requireNonNull(burger, "burger must not be null");
         }
 
+        //Setter for optional drink
         public Builder drink(Drink drink) {
             this.drink = drink;
             return this;
         }
-
+        //Setter for optional fries
         public Builder fries(Fries fries) {
             this.fries = fries;
             return this;
         }
         public Meal build(){
             return new Meal(this);
-        }
-
-        @Override
-        public String toString() {
-            return "Builder{" +
-                    "burger=" + burger +
-                    ", drink=" + drink +
-                    ", fries=" + fries +
-                    '}';
         }
 
         public Burger getBurger() {
@@ -61,5 +56,14 @@ public class Meal {
         public Fries getFries() {
             return fries;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Meal{" +
+                "burger=" + burger +
+                ", drink=" + drink +
+                ", fries=" + fries +
+                '}';
     }
 }
