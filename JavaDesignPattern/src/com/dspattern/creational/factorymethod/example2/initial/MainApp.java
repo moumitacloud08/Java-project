@@ -1,4 +1,4 @@
-package com.dspattern.creational.factorymethod.example2;
+package com.dspattern.creational.factorymethod.example2.initial;
 
 public class MainApp {
     public static void main(String[] args){
