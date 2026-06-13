@@ -1,6 +1,6 @@
-package com.dspattern.creational.factorymethod;
+package com.dspattern.creational.factorymethod.example1;
 
-import com.dspattern.creational.factorymethod.message.Message;
+import com.dspattern.creational.factorymethod.example1.message.Message;
 
 public class Client {
 

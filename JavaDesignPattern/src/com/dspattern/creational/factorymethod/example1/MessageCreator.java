@@ -1,6 +1,6 @@
-package com.dspattern.creational.factorymethod;
+package com.dspattern.creational.factorymethod.example1;
 
-import com.dspattern.creational.factorymethod.message.Message;
+import com.dspattern.creational.factorymethod.example1.message.Message;
 
 /**
  * This is our abstract "creator". The abstract method createMessage() has to be
@@ -14,7 +14,7 @@ public abstract class MessageCreator {
 		msg.encrypt();
 		return msg;
 	}
-
+	//Factory method
 	public abstract Message createMessage();
 
 }
