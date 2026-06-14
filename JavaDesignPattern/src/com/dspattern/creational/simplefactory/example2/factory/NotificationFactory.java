@@ -1,6 +1,9 @@
-package com.dspattern.creational.factorymethod.example2.factory;
+package com.dspattern.creational.simplefactory.example2.factory;
 
-import java.util.Locale;
+import com.dspattern.creational.simplefactory.example2.product.EmailNotification;
+import com.dspattern.creational.simplefactory.example2.product.Notification;
+import com.dspattern.creational.simplefactory.example2.product.SmsNotification;
+import com.dspattern.creational.simplefactory.example2.product.WhatsAppNotification;
 
 public class NotificationFactory {
     public static Notification createNotification(String type){

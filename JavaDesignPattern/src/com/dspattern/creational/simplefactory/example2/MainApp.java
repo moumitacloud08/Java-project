@@ -1,6 +1,7 @@
-package com.dspattern.creational.factorymethod.example2.factory;
+package com.dspattern.creational.simplefactory.example2;
 
-import com.dspattern.creational.factorymethod.example2.initial.NotificationService;
+import com.dspattern.creational.simplefactory.example2.factory.NotificationFactory;
+import com.dspattern.creational.simplefactory.example2.product.Notification;
 
 public class MainApp {
     public static void main(String[] args){

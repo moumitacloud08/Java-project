@@ -1,4 +1,4 @@
-package com.dspattern.creational.factorymethod.example2.initial;
+package com.dspattern.creational.simplefactory.example1;
 
 public class NotificationService {
 
