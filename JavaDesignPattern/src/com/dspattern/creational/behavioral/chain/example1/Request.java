@@ -1,4 +1,4 @@
-package com.dspattern.creational.behavioral.chain;
+package com.dspattern.creational.behavioral.chain.example1;
 
 /**
  * Represents a simple request object used in the chain of Responsibility pattern

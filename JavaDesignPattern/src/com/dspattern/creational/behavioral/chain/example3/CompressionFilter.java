@@ -1,4 +1,4 @@
-package com.dspattern.creational.behavioral.chain;
+package com.dspattern.creational.behavioral.chain.example3;
 
 /**
  * Concrete filter that simulates payload compression.
@@ -17,13 +17,13 @@ public class CompressionFilter implements Filter {
 
     @Override
     public void apply(Request request) {
-        System.out.println("CompressionFilter: compressing payload "+request.getPayload());
+        System.out.println("CompressionFilter: compressing payload " + request.getPayload());
 
         //just an academic example ... we could simulate this
-        request.setCompressed(true);
+        request.setAttributes("compressed", true);
 
         //Continue to next filter if available
-        if(nextFilter != null){
+        if (nextFilter != null) {
             nextFilter.apply(request);
         }
     }
