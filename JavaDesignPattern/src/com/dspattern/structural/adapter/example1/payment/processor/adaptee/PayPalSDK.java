@@ -15,6 +15,6 @@ public class PayPalSDK {
     public void sendPayment(BigDecimal amount, String currencyCode){
 
         //Note: API operates an BigDecimal for money to avoid floating-point issue
-        System.out.println("Processing Paypal payment of "+amount+" "+currencyCode);
+        System.out.println("[third-party payPalAPI] Processing Paypal payment of "+amount+" "+currencyCode);
     }
 }
