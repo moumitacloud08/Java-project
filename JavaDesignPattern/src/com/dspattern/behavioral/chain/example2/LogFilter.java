@@ -1,4 +1,4 @@
-package com.dspattern.creational.behavioral.chain.example2;
+package com.dspattern.behavioral.chain.example2;
 
 /**
  * Concrete filter that logs the request

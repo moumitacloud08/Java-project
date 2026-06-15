@@ -1,4 +1,4 @@
-package com.dspattern.creational.behavioral.chain.example1;
+package com.dspattern.behavioral.chain.example2;
 
 public class MainApp {
     public static void main(String[] args){

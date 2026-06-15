@@ -1,4 +1,4 @@
-package com.dspattern.creational.behavioral.chain.example3;
+package com.dspattern.behavioral.chain.example3;
 
 public class TrimFilter implements Filter {
 

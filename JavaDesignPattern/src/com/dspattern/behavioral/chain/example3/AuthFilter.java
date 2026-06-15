@@ -1,4 +1,4 @@
-package com.dspattern.creational.behavioral.chain.example1;
+package com.dspattern.behavioral.chain.example3;
 
 /**
  * Concrete filter that handles authentication object
@@ -18,22 +18,23 @@ public class AuthFilter implements Filter {
 
     @Override
     public void apply(Request request) {
-        System.out.println("AuthFilter: checking authentication for "+request.getPayload());
+        System.out.println("AuthFilter: checking authentication for " + request.getPayload());
 
-        if(authenticate(request)){
-            request.setAuthenticated(true);
+        if (authenticate(request)) {
+            request.setAttributes("authenticated", true);
             System.out.println("AuthFilter: authentication successful");
-        }else{
+        } else {
+            request.setAttributes("authenticated", false);
             System.out.println("AuthFilter: authentication failed - stopping chain");
             return;
         }
 
-        if(nextFilter != null)
+        if (nextFilter != null)
             nextFilter.apply(request);
     }
 
     //Helper method (trivial implementation)
-    private boolean authenticate(Request request){
+    private boolean authenticate(Request request) {
 
         //Check if the request payload contains the string "auth"
         String payload = request.getPayload();
