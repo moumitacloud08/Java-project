@@ -3,7 +3,9 @@ package com.dspattern.structural.adapter.example1;
 import com.dspattern.structural.adapter.example1.payment.processor.DemoPaymentProcessor;
 import com.dspattern.structural.adapter.example1.payment.processor.PaymentProcessor;
 import com.dspattern.structural.adapter.example1.payment.processor.adaptee.PayPalSDK;
+import com.dspattern.structural.adapter.example1.payment.processor.adaptee.StripeSDK;
 import com.dspattern.structural.adapter.example1.payment.processor.adapter.PayPalAdapter;
+import com.dspattern.structural.adapter.example1.payment.processor.adapter.StripeAdapter;
 import com.dspattern.structural.adapter.example1.payment.service.PaymentService;
 
 import java.math.BigDecimal;
@@ -30,5 +32,11 @@ public class MainApp {
         // PayPal (BigDecimal + currency)
         PaymentProcessor payPal = new PayPalAdapter(new PayPalSDK());
         paymentService.processPayment(payPal,new BigDecimal("125.00"));
+
+        System.out.println();
+
+        // Stripe (BigDecimal -> cents)
+        PaymentProcessor stripe = new StripeAdapter(new StripeSDK());
+        paymentService.processPayment(stripe,new BigDecimal("150.00"));
     }
 }
