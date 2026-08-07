@@ -10,6 +10,7 @@ import java.util.stream.Collectors;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.interview.model.Employee;
 
 public class MultipleProgram_01 {
 	
@@ -41,6 +42,20 @@ public class MultipleProgram_01 {
 		  List<String> words =
 	                Arrays.asList("Java","SpringBoot","Microservices","API");
 		program.findLongestString(words);;
+		
+		System.out.println("\nSum of all numbers");
+        List<Integer> list = Arrays.asList(10,20,30,40);
+		program.sumOfAllNumbers(list);
+		
+		System.out.println("\nGroup employees by department");
+
+        List<Employee> list3 = Arrays.asList(
+                new Employee("John","IT"),
+                new Employee("David","HR"),
+                new Employee("Alex","IT")
+        );
+        program.groupByDepartment(list3);
+
 
 
 	}
@@ -85,6 +100,17 @@ public class MultipleProgram_01 {
 		.max(Comparator.comparingInt(String::length))
 		.orElse(null);
 		System.out.println(longest);
+	}
+	
+	void sumOfAllNumbers(List<Integer> list) {
+		int sum = list.stream().mapToInt(Integer::intValue).sum();
+		System.out.println(sum);
+	}
+	
+	void groupByDepartment(List<Employee> list) {
+		Map<String,List<Employee>> map =list.stream().collect(Collectors.groupingBy(Employee::getDepartment));
+		System.out.println(map);
+	
 	}
 	
 	
