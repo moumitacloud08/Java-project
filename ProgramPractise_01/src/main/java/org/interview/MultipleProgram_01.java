@@ -65,6 +65,23 @@ public class MultipleProgram_01 {
         System.out.println("\nFind the longest string");
         List<String> strings = Arrays.asList("Java", "Python",  "C++","Kotlin");
         program.findAllLongestString(strings);
+        
+        System.out.println("\nRemove duplicates using distinct()");
+        List<String> strings2 = Arrays.asList(
+        	    "Java", "Python", "Java", "C++", "Python"
+        	);
+        program.removeDupUsingDistinct(strings2);
+        
+        System.out.println("\nSum and Average of the numbers");
+        List<Integer> numbers2 = Arrays.asList(10, 20, 30, 40, 50);
+        program.sumAndAvg(numbers2);
+        
+        System.out.println("\nSecond highest and lowest number");
+        List<Integer> numbers3 = Arrays.asList(10, 20, 5, 30, 40, 10, 5);
+        program.secondHighestAndLowest(numbers3);
+    	
+        System.out.println("\nSecond maximum and lowest number");
+        program.findMaxAndMinElm(numbers);
 
 
 
@@ -157,9 +174,34 @@ public class MultipleProgram_01 {
 		System.out.println(longest);
 	}
 	
+	void removeDupUsingDistinct(List<String> strings) {
+		List<String> ditList = strings.stream().distinct().collect(Collectors.toList());
+		System.out.println(ditList);
+	}
+	
+	void sumAndAvg(List<Integer> numbers) {
+		int sum = numbers.stream().mapToInt(Integer :: intValue).sum();
+		double average = numbers.stream().mapToInt(Integer::intValue).average().orElse(0.0);
+		System.out.println(sum+" || "+average);
+	}
+	
+	void secondHighestAndLowest(List<Integer> numbers) {
+		int secondHighest = numbers.stream()
+				.distinct()
+				.sorted(Comparator.reverseOrder())
+				.skip(1)
+				.findFirst()
+				.orElseThrow(() -> new RuntimeException("Not enough Numbers"));
+		System.out.println(secondHighest);
+	}
+	
+    void findMaxAndMinElm(List<Integer> numbers) {
+		
+	}
 	
 	
-//	Find duplicate elements.
+	
+
 //	Find duplicate characters in a string.
 //	First non-repeated character.
 //	Second highest/lowest number.
@@ -167,10 +209,8 @@ public class MultipleProgram_01 {
 //	Sort employees by salary or name.
 //	Group employees by department.
 //	Count frequency of words/characters.
-//	Remove duplicates using distinct().
 //	Convert List to Map.
 //	Partition even and odd numbers.
-//	Sum and average of numbers.
 //	Find common elements between two lists.
 //	Flatten nested lists using flatMap().
 //	Use Optional to avoid NullPointerException.
