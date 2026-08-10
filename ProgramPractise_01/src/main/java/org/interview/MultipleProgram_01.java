@@ -10,8 +10,6 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.interview.model.Employee;
 
 public class MultipleProgram_01 {
@@ -62,6 +60,11 @@ public class MultipleProgram_01 {
         
         System.out.println("\nFind Duplicate chars in a string");
         program.findDuplicateChars(input);
+        
+        
+        System.out.println("\nFind the longest string");
+        List<String> strings = Arrays.asList("Java", "Python",  "C++","Kotlin");
+        program.findAllLongestString(strings);
 
 
 
@@ -148,6 +151,12 @@ public class MultipleProgram_01 {
 		
 	}
 	
+	void findAllLongestString(List<String> strings) {
+		int maxLength = strings.stream().mapToInt(String::length).max().orElse(0);
+		List<String> longest = strings.stream().filter(n -> n.length() == maxLength).collect(Collectors.toList());
+		System.out.println(longest);
+	}
+	
 	
 	
 //	Find duplicate elements.
@@ -161,7 +170,6 @@ public class MultipleProgram_01 {
 //	Remove duplicates using distinct().
 //	Convert List to Map.
 //	Partition even and odd numbers.
-//	Find longest string.
 //	Sum and average of numbers.
 //	Find common elements between two lists.
 //	Flatten nested lists using flatMap().
