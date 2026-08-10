@@ -2,9 +2,11 @@ package org.interview;
 
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.HashSet;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -25,6 +27,9 @@ public class MultipleProgram_01 {
 		System.out.println("\nFind Duplicate Elements");
 		List<Integer> list1 = Arrays.asList(1, 2, 3, 2, 4, 5, 1, 6);
 		program.findDuplicateElement(list1);
+		
+		System.out.println("\nFind Duplicate Elements Using Set");
+		program.findDuplicateElementUsingSet(list1);
 
 		System.out.println("\nCount Occurrence of Each Character");
 		String str = "programming";
@@ -48,13 +53,15 @@ public class MultipleProgram_01 {
 		program.sumOfAllNumbers(list);
 		
 		System.out.println("\nGroup employees by department");
-
         List<Employee> list3 = Arrays.asList(
                 new Employee("John","IT"),
                 new Employee("David","HR"),
                 new Employee("Alex","IT")
         );
         program.groupByDepartment(list3);
+        
+        System.out.println("\nFind Duplicate chars in a string");
+        program.findDuplicateChars(input);
 
 
 
@@ -65,7 +72,21 @@ public class MultipleProgram_01 {
 	}
 
 	void findDuplicateElement(List<Integer> list) {
+		Set<Integer> duplicates = list
+		.stream()
+		.collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+		.entrySet()
+		.stream()
+		.filter(i -> i.getValue() >1)
+		.map(Map.Entry::getKey)
+		.collect(Collectors.toSet());
+		System.out.println(duplicates);
 
+	}
+	void findDuplicateElementUsingSet(List<Integer> list) {
+		Set<Integer> seen = new HashSet<Integer>();
+		Set<Integer> duplicates = list.stream().filter(n -> !seen.add(n)).collect(Collectors.toSet());
+		System.out.println(duplicates);
 	}
 
 	void characterCount(String str) {
@@ -112,6 +133,39 @@ public class MultipleProgram_01 {
 		System.out.println(map);
 	
 	}
+	
+	void findDuplicateChars(String input) {
+		Set<Character> chars = input
+		.chars()
+		.mapToObj(c ->(char)c)
+		.collect(Collectors.groupingBy(Function.identity(),Collectors.counting()))
+		.entrySet()
+		.stream()
+		.filter(n -> n.getValue() >1)
+		.map(Map.Entry::getKey)
+		.collect(Collectors.toSet());
+		System.out.println(chars);
+		
+	}
+	
+	
+	
+//	Find duplicate elements.
+//	Find duplicate characters in a string.
+//	First non-repeated character.
+//	Second highest/lowest number.
+//	Find maximum/minimum element.
+//	Sort employees by salary or name.
+//	Group employees by department.
+//	Count frequency of words/characters.
+//	Remove duplicates using distinct().
+//	Convert List to Map.
+//	Partition even and odd numbers.
+//	Find longest string.
+//	Sum and average of numbers.
+//	Find common elements between two lists.
+//	Flatten nested lists using flatMap().
+//	Use Optional to avoid NullPointerException.
 	
 	
 	 
