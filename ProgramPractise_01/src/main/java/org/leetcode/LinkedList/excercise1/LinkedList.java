@@ -1,5 +1,8 @@
 package org.leetcode.LinkedList.excercise1;
 
+/**
+ * Find the middle value
+ */
 public class LinkedList {
 
     private Node head;
@@ -135,6 +138,10 @@ public class LinkedList {
     public Node findMiddle(){
     	Node slow = head;
     	Node fast = head;
+    	
+    	if(head == null) 
+    		return null;
+    	
     	
     	  while (fast.next != null) {
               
