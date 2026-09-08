@@ -7,11 +7,14 @@ public class Solution {
 
         VarInLambda vl = new VarInLambda();
         vl.example();
+        System.out.println();
 
         StringFeatures sf = new StringFeatures();
         sf.example();
+        System.out.println();
 
         FileStringExample fs = new FileStringExample();
         fs.example();
+        System.out.println();
     }
 }
