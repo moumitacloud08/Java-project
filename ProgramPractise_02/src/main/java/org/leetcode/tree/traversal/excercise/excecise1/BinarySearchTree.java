@@ -1,12 +1,11 @@
 package org.leetcode.tree.traversal.excercise.excecise1;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
 import java.util.stream.IntStream;
 
-
+/**
+ * Validate BST
+ */
 public class BinarySearchTree {
 
     public Node root;
